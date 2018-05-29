@@ -1,4 +1,5 @@
-public class HelloAspectJDemo {	 
+public class HelloAspectJDemo {	
+	
 	  public static void sayHello() {
 	      System.out.println("Hello");
 	  }	 

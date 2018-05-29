@@ -8,9 +8,9 @@ public aspect TimeAspectJ {
 	// 4) Colocar lo que se va a ejecutar despues del llamado de la funcion en la parte del "After" o llamado "Advice"
 	pointcut time(): call(* HelloAspectJDemo.greeting());  
     after() : time()  {
-    	long startTime = System.currentTimeMillis()();
+    	long startTime = System.nanoTime();
     	// ... do something ...
-    	long estimatedTime = System.currentTimeMillis() - startTime;
+    	long estimatedTime = System.nanoTime() - startTime;
     	System.out.print("\nTiempo de uso del sistema en segundos:    "+estimatedTime+" Segundos");
     }  
 }  
