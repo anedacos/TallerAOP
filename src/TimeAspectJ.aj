@@ -1,4 +1,5 @@
-public aspect TimeAspectJ {	
+public aspect TimeAspectJ {
+	long startTime = System.nanoTime();
     // Define a Pointcut is
     // collection of JoinPoint call sayHello of class HelloAspectJDemo.
     
@@ -8,10 +9,8 @@ public aspect TimeAspectJ {
 	// 4) Colocar lo que se va a ejecutar despues del llamado de la funcion en la parte del "After" o llamado "Advice"
 	pointcut time(): call(* HelloAspectJDemo.greeting());  
     after() : time()  {
-    	long startTime = System.nanoTime();
-    	// ... do something ...
     	long estimatedTime = System.nanoTime() - startTime;
-    	System.out.print("\nTiempo de uso del sistema en segundos:    "+estimatedTime+" Segundos");
+    	System.out.print("\nTiempo de uso del sistema en segundos:    "+estimatedTime+" Nanosegundos");
     }  
 }  
 
